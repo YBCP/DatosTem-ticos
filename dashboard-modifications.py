@@ -9,12 +9,12 @@ from datetime import datetime, timedelta
 def cargar_datos():
     try:
         # Intentar cargar directamente desde el archivo CSV
-        df = pd.read_csv('Prueba seguimiento.csv', sep=';', encoding='utf-8')
+        df = pd.read_csv('Tematicos.csv', sep=';', encoding='utf-8')
     except:
         # Si falla, usar el método alternativo
         print("Usando método alternativo para cargar datos")
         data = []
-        with open('Prueba seguimiento.csv', 'r', encoding='utf-8') as f:
+        with open('Tematicos.csv', 'r', encoding='utf-8') as f:
             lines = f.readlines()
             headers = lines[0].strip().split(';')
             for line in lines[1:]:

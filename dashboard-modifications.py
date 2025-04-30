@@ -369,7 +369,7 @@ def create_schedule_vs_progress(df):
             if end_date:
                 plot_data.append({
                     'Entidad': row['Entidad'],
-                    'Nivel': row['Nive de información'],
+                    'Nivel': row['Nivel de información'],
                     'Fecha Programada': end_date,
                     'Avance Actual': row['Porcentaje de Avance'],
                     'Días Restantes': (end_date - datetime.now()).days

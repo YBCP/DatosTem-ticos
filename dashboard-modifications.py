@@ -1,574 +1,922 @@
+import streamlit as st
 import pandas as pd
-import dash
-from dash import dcc, html, dash_table, callback, Input, Output
 import plotly.express as px
+import plotly.figure_factory as ff
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
+import io
+import os
+import random
+import numpy as np
 
-# Cargar y limpiar los datos
-def cargar_datos():
+# Configuración de la página
+st.set_page_config(page_title="Seguimiento de Indicadores", layout="wide")
+
+# Título del dashboard
+st.title("Dashboard de Seguimiento de Indicadores")
+
+# Cargar datos con mejor manejo de errores
+@st.cache_data
+def load_data():
     try:
-        # Intentar cargar directamente desde el archivo CSV
-        df = pd.read_csv('Tematicos.csv', sep=';', encoding='utf-8')
-    except:
-        # Si falla, usar el método alternativo
-        print("Usando método alternativo para cargar datos")
-        data = []
-        with open('Tematicos.csv', 'r', encoding='utf-8') as f:
-            lines = f.readlines()
-            headers = lines[0].strip().split(';')
-            for line in lines[1:]:
-                if line.strip():  # Verificar que la línea no esté vacía
-                    values = line.strip().split(';')
-                    if len(values) >= 5:  # Verificar que haya suficientes valores
-                        # Rellenar con None si faltan valores
-                        while len(values) < len(headers):
-                            values.append(None)
-                        data.append(dict(zip(headers, values)))
+        # Verificar si el archivo existe
+        filename = "Prueba seguimiento.csv"
+        if not os.path.exists(filename):
+            st.error(f"Archivo no encontrado: {filename}")
+            return pd.DataFrame()
         
-        df = pd.DataFrame(data)
-    
-    # Eliminar filas completamente vacías
-    df = df.dropna(how='all')
-    
-    # Convertir fechas al formato adecuado
-    date_columns = [col for col in df.columns if any(keyword in col.lower() for keyword in ['fecha', 'programado', 'suscripción', 'entrega'])]
-    for col in date_columns:
-        if col in df.columns:
-            df[col] = pd.to_datetime(df[col], errors='coerce', format='%d/%m/%Y')
-    
-    # Calcular estado de avance numérico para visualizaciones
-    df['Avance_Porcentaje'] = calcular_avance(df)
-    
-    # Determinar el estado basado en las columnas existentes (derivado)
-    df['Estado'] = determinar_estado(df)
-    
-    return df
+        # Intentar cargar el archivo
+        try:
+            df = pd.read_csv(filename, sep=";", encoding="utf-8")
+            st.success(f"Datos cargados correctamente. {len(df)} filas encontradas.")
+            return df
+        except Exception as e:
+            st.error(f"Error al leer el archivo CSV: {str(e)}")
+            
+            # Intentar con diferentes codificaciones
+            for encoding in ["latin1", "ISO-8859-1", "cp1252"]:
+                try:
+                    df = pd.read_csv(filename, sep=";", encoding=encoding)
+                    st.success(f"Datos cargados con codificación {encoding}. {len(df)} filas encontradas.")
+                    return df
+                except:
+                    pass
+                    
+            # Intentar con diferentes separadores
+            for sep in [",", "\t"]:
+                try:
+                    df = pd.read_csv(filename, sep=sep, encoding="utf-8")
+                    st.success(f"Datos cargados con separador '{sep}'. {len(df)} filas encontradas.")
+                    return df
+                except:
+                    pass
+                    
+            return pd.DataFrame()
+    except Exception as e:
+        st.error(f"Error desconocido: {str(e)}")
+        return pd.DataFrame()
 
-def determinar_estado(df):
-    """Determina el estado (Completo, Proceso, Pendiente) basado en las columnas del dataframe"""
-    estados = []
+# Función para descargar datos
+def download_dataframe(df):
+    csv = df.to_csv(sep=";", index=False, encoding="utf-8")
+    return csv
+
+# Función para convertir fechas en formato correcto
+def parse_date(date_str):
+    if pd.isna(date_str) or date_str == "" or date_str == "-":
+        return None
+    
+    try:
+        # Intentar diferentes formatos de fecha
+        formats = ["%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y"]
+        
+        for fmt in formats:
+            try:
+                return datetime.strptime(date_str, fmt)
+            except:
+                continue
+                
+        # Si es solo un año
+        if len(str(date_str).strip()) == 4 and str(date_str).strip().isdigit():
+            return datetime(int(str(date_str).strip()), 1, 1)
+        
+        return None
+    except:
+        return None
+
+# Función para calcular el porcentaje de avance
+def calculate_progress(row):
+    # Contar columnas que representan actividades
+    activity_columns = [col for col in row.index if col not in ['Funcionario', 'Entidad', 'Nive de información', 'Estado', 'Programado', 'Estado_Vencimiento', 'Porcentaje de Avance']]
+    
+    # Contar actividades completadas (que tienen fecha)
+    completed_activities = sum(1 for col in activity_columns if pd.notna(row[col]) and row[col] != "" and row[col] != "-")
+    
+    # Calcular porcentaje
+    if len(activity_columns) > 0:
+        return round((completed_activities / len(activity_columns)) * 100, 1)
+    else:
+        return 0.0
+
+# Función para generar colores de entidades
+def generate_entity_colors(entities):
+    # Paleta de colores visualmente distintos
+    color_palette = [
+        'rgb(31, 119, 180)', 'rgb(255, 127, 14)', 'rgb(44, 160, 44)', 
+        'rgb(214, 39, 40)', 'rgb(148, 103, 189)', 'rgb(140, 86, 75)', 
+        'rgb(227, 119, 194)', 'rgb(127, 127, 127)', 'rgb(188, 189, 34)', 
+        'rgb(23, 190, 207)', 'rgb(174, 199, 232)', 'rgb(255, 187, 120)',
+        'rgb(152, 223, 138)', 'rgb(255, 152, 150)', 'rgb(197, 176, 213)'
+    ]
+    
+    # Asignar colores a entidades
+    colors = {}
+    for i, entity in enumerate(entities):
+        colors[entity] = color_palette[i % len(color_palette)]
+    
+    return colors
+
+# Función para crear diagrama de Gantt con mejoras
+def create_gantt(df):
+    # Filtrar filas con datos suficientes
+    df_gantt = df.copy()
+    
+    # Preparar datos para diagrama de Gantt
+    gantt_data = []
+    
+    # Obtener colores para las entidades
+    unique_entities = df_gantt['Entidad'].dropna().unique()
+    entity_colors = generate_entity_colors(unique_entities)
+    
+    for _, row in df_gantt.iterrows():
+        if pd.notna(row.get('Funcionario')) and pd.notna(row.get('Entidad')) and pd.notna(row.get('Nive de información')):
+            # Definir inicio y fin
+            start_date = None
+            end_date = None
+            
+            # Buscar fecha de inicio (primera fecha no vacía en la fila)
+            for col in ['Actas de acercamiento y manifestación de interés', 'Suscripción acuerdo de compromiso']:
+                if col in row and pd.notna(row[col]) and row[col] != "" and row[col] != "-":
+                    start_date = parse_date(row[col])
+                    if start_date:
+                        break
+            
+            # Buscar fecha de fin (usar Programado si está disponible)
+            if 'Programado' in row and pd.notna(row['Programado']) and row['Programado'] != "" and row['Programado'] != "-":
+                end_date = parse_date(row['Programado'])
+            else:
+                # Si no hay fecha programada, buscar la última fecha de actividad
+                for col in reversed(df_gantt.columns):
+                    if isinstance(col, str) and (col.endswith('/2025') or col.endswith('/2024')):
+                        if pd.notna(row.get(col)) and row.get(col) != "" and row.get(col) != "-":
+                            end_date = parse_date(row[col])
+                            if end_date:
+                                break
+            
+            # Si no se encontró una fecha de fin, establecer un plazo predeterminado
+            if start_date and not end_date:
+                end_date = start_date + timedelta(days=90)  # 3 meses por defecto
+            
+            # Si tenemos fechas válidas, agregar a los datos del gantt
+            if start_date and end_date:
+                task_name = f"{row['Nive de información']} - {row['Porcentaje de Avance']}%"
+                
+                gantt_data.append({
+                    'Task': task_name,
+                    'Start': start_date,
+                    'Finish': end_date,
+                    'Funcionario': row['Funcionario'],
+                    'Entidad': row['Entidad'],
+                    'Nivel': row['Nive de información'],
+                    'Avance': row['Porcentaje de Avance']
+                })
+    
+    if len(gantt_data) > 0:
+        df_gantt_chart = pd.DataFrame(gantt_data)
+        
+        # Crear figura con ff.create_gantt
+        fig = ff.create_gantt(df_gantt_chart, index_col='Entidad', show_colorbar=True, group_tasks=True)
+        
+        # Actualizar colores según la entidad
+        for i, task in enumerate(fig['data']):
+            entity = getattr(task, 'name', None) or getattr(task, 'legendgroup', None)
+            if entity in entity_colors:
+                fig['data'][i]['marker']['color'] = entity_colors[entity]
+
+        # Añadir línea vertical para la fecha actual
+        today = datetime.now()
+        fig.add_shape(
+            type="line",
+            x0=today,
+            y0=0,
+            x1=today,
+            y1=len(gantt_data) + 1,
+            line=dict(color="Red", width=2, dash="dash"),
+        )
+        
+        # Añadir anotación para la fecha actual
+        fig.add_annotation(
+            x=today,
+            y=0,
+            text="HOY",
+            showarrow=True,
+            arrowhead=1,
+            ax=0,
+            ay=-40,
+            font=dict(color="red", size=12),
+        )
+        
+        # Actualizar diseño
+        fig.update_layout(
+            title="Diagrama de Gantt - Seguimiento de Indicadores",
+            xaxis_title="Fecha",
+            yaxis_title="Nivel de Información",
+            height=700,
+            margin=dict(l=150),
+            legend_title="Entidades"
+        )
+        
+        return fig, df_gantt_chart
+    
+    return None, pd.DataFrame()
+
+# Función para verificar el estado de vencimiento
+def check_status(row):
+    today = datetime.now()
+    end_date = None
+    
+    # Buscar fecha de fin (usar Programado si está disponible)
+    if 'Programado' in row and pd.notna(row['Programado']) and row['Programado'] != "" and row['Programado'] != "-":
+        end_date = parse_date(row['Programado'])
+    else:
+        # Si no hay fecha programada, buscar la última fecha de actividad
+        for col in reversed(row.index):
+            if isinstance(col, str) and (col.endswith('/2025') or col.endswith('/2024')):
+                if pd.notna(row.get(col)) and row.get(col) != "" and row.get(col) != "-":
+                    end_date = parse_date(row[col])
+                    if end_date:
+                        break
+    
+    if end_date:
+        if end_date < today:
+            return "Vencido"
+        elif end_date < today + timedelta(days=30):  # Próximo a vencer (30 días)
+            return "Próximo a vencer"
+        else:
+            return "En tiempo"
+    
+    return "Sin fecha"
+
+# Función para aplicar estilos condicionales a la tabla
+def highlight_status(df):
+    df_styled = df.copy()
+    df_styled['Estado_Vencimiento'] = df.apply(check_status, axis=1)
+    
+    # Calcular porcentaje de avance
+    df_styled['Porcentaje de Avance'] = df.apply(calculate_progress, axis=1)
+    
+    # Aplicar estilos condicionales
+    def apply_color(row):
+        if row['Estado_Vencimiento'] == 'Vencido':
+            return ['background-color: #ffcccc'] * len(row)
+        elif row['Estado_Vencimiento'] == 'Próximo a vencer':
+            return ['background-color: #ffffcc'] * len(row)
+        elif row['Estado_Vencimiento'] == 'En tiempo':
+            return ['background-color: #ccffcc'] * len(row)
+        else:
+            return [''] * len(row)
+    
+    styled_df = df_styled.style.apply(apply_color, axis=1)
+    return styled_df, df_styled
+
+# Nuevas funciones para el Panel de Control
+
+# Función para clasificar el estado del proyecto
+def classify_project_status(progress):
+    if progress == 100:
+        return "Completo"
+    elif progress > 0:
+        return "En proceso"
+    else:
+        return "Pendiente"
+
+# Función para identificar etapas del proceso
+def identify_process_stage(column_name):
+    # Clasificar columnas en etapas del proceso
+    if any(term in column_name.lower() for term in ['acta', 'acercamiento', 'interés', 'suscripción', 'compromiso']):
+        return "Acuerdos iniciales"
+    elif any(term in column_name.lower() for term in ['análisis', 'analisis', 'información', 'cronograma', 'plan']):
+        return "Implementación"
+    elif any(term in column_name.lower() for term in ['verificación', 'verificacion', 'validación', 'validacion', 'datos', 'servicio']):
+        return "Verificación"
+    else:
+        return "Otras actividades"
+
+# Función para crear gráfico de barras de completitud por entidad
+def create_completeness_by_entity(df):
+    if df.empty or 'Entidad' not in df.columns:
+        return None
+    
+    # Agrupar por entidad y calcular promedios de avance
+    avg_progress = df.groupby('Entidad')['Porcentaje de Avance'].mean().reset_index()
+    avg_progress['Porcentaje de Avance'] = avg_progress['Porcentaje de Avance'].round(1)
+    
+    # Ordenar de mayor a menor
+    avg_progress = avg_progress.sort_values(by='Porcentaje de Avance', ascending=False)
+    
+    # Crear gráfico
+    fig = px.bar(
+        avg_progress, 
+        x='Entidad', 
+        y='Porcentaje de Avance',
+        title='Porcentaje de Completitud por Entidad',
+        text='Porcentaje de Avance',
+        color='Porcentaje de Avance',
+        color_continuous_scale='Blues',
+        labels={'Porcentaje de Avance': 'Avance (%)'}
+    )
+    
+    fig.update_layout(
+        xaxis_title="Entidad",
+        yaxis_title="Porcentaje de Avance",
+        yaxis=dict(range=[0, 100]),
+        height=500
+    )
+    
+    return fig
+
+# Función para crear gráfico de estado de proyectos
+def create_project_status_chart(df):
+    if df.empty:
+        return None
+    
+    # Clasificar estado de proyectos
+    df['Estado del Proyecto'] = df['Porcentaje de Avance'].apply(classify_project_status)
+    
+    # Contar proyectos por estado
+    status_counts = df['Estado del Proyecto'].value_counts().reset_index()
+    status_counts.columns = ['Estado', 'Cantidad']
+    
+    # Definir colores para cada estado
+    colors = {'Completo': '#4CAF50', 'En proceso': '#2196F3', 'Pendiente': '#F44336'}
+    
+    # Crear gráfico de pie
+    fig = px.pie(
+        status_counts, 
+        values='Cantidad', 
+        names='Estado',
+        title='Estado de los Proyectos',
+        color='Estado',
+        color_discrete_map=colors
+    )
+    
+    fig.update_traces(textposition='inside', textinfo='percent+label')
+    fig.update_layout(height=400)
+    
+    return fig
+
+# Función para crear gráfico de fechas programadas vs avance actual
+def create_schedule_vs_progress(df):
+    if df.empty or 'Programado' not in df.columns:
+        return None
+    
+    # Crear datos para el gráfico
+    plot_data = []
     
     for _, row in df.iterrows():
-        # Verificar si está en la columna "Observaciones"
-        observacion = str(row.get('Observaciones', '')).lower() if pd.notna(row.get('Observaciones')) else ''
+        if pd.notna(row.get('Programado')) and row.get('Programado') != "" and row.get('Programado') != "-":
+            end_date = parse_date(row['Programado'])
+            if end_date:
+                plot_data.append({
+                    'Entidad': row['Entidad'],
+                    'Nivel': row['Nive de información'],
+                    'Fecha Programada': end_date,
+                    'Avance Actual': row['Porcentaje de Avance'],
+                    'Días Restantes': (end_date - datetime.now()).days
+                })
+    
+    if not plot_data:
+        return None
         
-        if 'completo' in observacion:
-            estados.append('Completo')
-        elif 'proceso' in observacion:
-            estados.append('Proceso')
-        # Si tiene valor en la columna "Oficios de cierre"
-        elif pd.notna(row.get('Oficios de cierre')) and row['Oficios de cierre'] == 'Si':
-            estados.append('Completo')
-        # Si el porcentaje de avance es 100%
-        elif row['Avance_Porcentaje'] == 100:
-            estados.append('Completo')
-        # Si el porcentaje de avance es mayor que 0%
-        elif row['Avance_Porcentaje'] > 0:
-            estados.append('Proceso')
-        else:
-            estados.append('Pendiente')
+    df_plot = pd.DataFrame(plot_data)
     
-    return estados
-
-def calcular_avance(df):
-    """Calcula el porcentaje de avance basado en las columnas completadas"""
-    # Columnas de proceso que pueden ser "Completo" o "Si"
-    columnas_proceso = ['Actas de acercamiento y manifestación de interés', 
-                       'Suscripción acuerdo de compromiso', 
-                       'Entrega acuerdo de compromiso',
-                       'Acuerdo de compromiso', 
-                       'Gestion acceso a los datos y documentos requeridos',
-                       'Análisis de información', 
-                       'Cronograma Concertado', 
-                       'Seguimiento a los acuerdos definidos',
-                       'Registro', 'ET', 'CO', 'DD', 'REC', 'SERVICIO', 
-                       'Resultados orientación técnica',
-                       'Verificación del servicio web geográfico',
-                       'Verificar aprobar resultados',
-                       'Revisar y validar los datos cargados en la base de datos',
-                       'Aprobación resultados orientación',
-                       'Disponer datos temáticos',
-                       'Catálogo de recursos\ngeográficos',
-                       'Oficios de cierre']
+    # Crear gráfico de dispersión
+    fig = px.scatter(
+        df_plot,
+        x='Fecha Programada',
+        y='Avance Actual',
+        color='Entidad',
+        size='Avance Actual',
+        hover_name='Nivel',
+        title='Fechas Programadas vs. Avance Actual',
+        labels={'Avance Actual': 'Avance (%)', 'Fecha Programada': 'Fecha Programada de Entrega'},
+        size_max=30
+    )
     
-    # Contar cuántas de estas columnas están marcadas como "Completo" o "Si"
-    # y calcular el porcentaje sobre el total de columnas
-    def calcular_fila(row):
-        completados = 0
-        total = 0
-        for col in columnas_proceso:
-            if col in row and pd.notna(row[col]):
-                total += 1
-                if row[col] in ['Completo', 'Si']:
-                    completados += 1
-        
-        if total == 0:
-            return 0
-        return (completados / total) * 100
-    
-    return df.apply(calcular_fila, axis=1)
-
-# Inicializar la aplicación Dash
-app = dash.Dash(__name__, suppress_callback_exceptions=True)
-
-# Definir el layout con filtros horizontales
-app.layout = html.Div(style={'fontFamily': 'Arial, sans-serif'}, children=[
-    html.H1('Dashboard de Seguimiento de Datos Temáticos',
-            style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '30px', 'marginTop': '20px'}),
-    
-    # Sección de filtros en una fila horizontal
-    html.Div([
-        html.H3('Filtros', style={'color': '#34495e', 'borderBottom': '2px solid #3498db', 'paddingBottom': '10px'}),
-        html.Div([
-            # Columna para el filtro de Funcionario
-            html.Div([
-                html.Label('Funcionario:', style={'fontWeight': 'bold'}),
-                dcc.Dropdown(
-                    id='dropdown-funcionario',
-                    options=[],  # Se llenará en el callback
-                    multi=True,
-                    placeholder='Seleccione funcionario(s)'
-                ),
-            ], style={'width': '24%', 'display': 'inline-block', 'marginRight': '1%'}),
-            
-            # Columna para el filtro de Entidad
-            html.Div([
-                html.Label('Entidad:', style={'fontWeight': 'bold'}),
-                dcc.Dropdown(
-                    id='dropdown-entidad',
-                    options=[],  # Se llenará en el callback
-                    multi=True,
-                    placeholder='Seleccione entidad(es)'
-                ),
-            ], style={'width': '24%', 'display': 'inline-block', 'marginRight': '1%'}),
-            
-            # Columna para el filtro de Estado
-            html.Div([
-                html.Label('Estado:', style={'fontWeight': 'bold'}),
-                dcc.Dropdown(
-                    id='dropdown-estado',
-                    options=[],  # Se llenará en el callback
-                    multi=True,
-                    placeholder='Seleccione estado(s)'
-                ),
-            ], style={'width': '24%', 'display': 'inline-block', 'marginRight': '1%'}),
-            
-            # Columna para el filtro de Tipo de dato
-            html.Div([
-                html.Label('Tipo de dato:', style={'fontWeight': 'bold'}),
-                dcc.Dropdown(
-                    id='dropdown-tipo-dato',
-                    options=[],  # Se llenará en el callback
-                    multi=True,
-                    placeholder='Seleccione tipo(s) de dato'
-                ),
-            ], style={'width': '24%', 'display': 'inline-block'}),
-        ], style={'display': 'flex', 'flexWrap': 'wrap', 'marginTop': '10px'})
-    ], style={'padding': '20px', 'margin': '0 0 20px 0', 'boxShadow': '0 4px 8px 0 rgba(0,0,0,0.2)', 
-              'borderRadius': '5px', 'backgroundColor': 'white'}),
-    
-    # Sección de Resumen
-    html.Div([
-        html.H3('Resumen', style={'color': '#34495e', 'borderBottom': '2px solid #3498db', 'paddingBottom': '10px'}),
-        html.Div([
-            html.Div(id='indicador-total', className='indicador'),
-            html.Div(id='indicador-completados', className='indicador'),
-            html.Div(id='indicador-en-proceso', className='indicador'),
-            html.Div(id='indicador-pendientes', className='indicador'),
-        ], style={'display': 'flex', 'justifyContent': 'space-between', 'marginBottom': '20px'}),
-        
-        html.Div([
-            dcc.Graph(id='grafico-avance-entidades')
-        ], style={'marginBottom': '20px'}),
-        
-        html.Div([
-            dcc.Graph(id='grafico-estado-por-entidad')
-        ]),
-    ], style={'padding': '20px', 'margin': '0 0 20px 0', 'boxShadow': '0 4px 8px 0 rgba(0,0,0,0.2)', 
-              'borderRadius': '5px', 'backgroundColor': 'white'}),
-    
-    html.Div([
-        html.H3('Próximas Fechas Programadas', style={'color': '#34495e', 'borderBottom': '2px solid #3498db', 'paddingBottom': '10px'}),
-        html.Div(id='proximas-fechas')
-    ], style={'padding': '20px', 'margin': '20px 0', 'boxShadow': '0 4px 8px 0 rgba(0,0,0,0.2)', 'borderRadius': '5px',
-              'backgroundColor': 'white'}),
-    
-    html.Div([
-        html.H3('Cronograma de Actividades', style={'color': '#34495e', 'borderBottom': '2px solid #3498db', 'paddingBottom': '10px'}),
-        dcc.Graph(id='grafico-cronograma'),
-    ], style={'padding': '20px', 'margin': '20px 0', 'boxShadow': '0 4px 8px 0 rgba(0,0,0,0.2)', 'borderRadius': '5px',
-              'backgroundColor': 'white'}),
-    
-    html.Div([
-        html.H3('Detalle de Indicadores', style={'color': '#34495e', 'borderBottom': '2px solid #3498db', 'paddingBottom': '10px'}),
-        dash_table.DataTable(
-
-            id='tabla-indicadores',
-            columns=[],  # Se llenará en el callback
-            data=[],     # Se llenará en el callback
-            hidden_columns=['fecha_vencida'],  # Hide this column by default
-            filter_action='native',
-            sort_action='native',
-            sort_mode='multi',
-            page_action='native',
-            page_size=15,
-            style_table={'overflowX': 'auto'},
-            style_cell={
-                'minWidth': '100px', 'width': '150px', 'maxWidth': '200px',
-                'overflow': 'hidden',
-                'textOverflow': 'ellipsis',
-                'textAlign': 'left'
-            },
-            style_header={
-                'backgroundColor': '#34495e',
-                'color': 'white',
-                'fontWeight': 'bold'
-            },
-            style_data_conditional=[
-                {
-                    'if': {'row_index': 'odd'},
-                    'backgroundColor': '#f2f2f2'
-                },
-                {
-                    'if': {'filter_query': '{Estado} = "Completo"'},
-                    'backgroundColor': '#d4efdf',
-                },
-                {
-                    'if': {'filter_query': '{Estado} = "Proceso"'},
-                    'backgroundColor': '#fef9e7',
-                },
-                {
-                    'if': {'filter_query': '{Estado} = "Pendiente"'},
-                    'backgroundColor': '#f9ebea',
-                },
-                # Nuevas condiciones para colorear fechas programadas
-                {
-                    'if': {
-                        'filter_query': '{fecha_vencida} = "vencida"',
-                        'column_id': 'Programado'
-                    },
-                    'backgroundColor': '#ff6b6b',  # Rojo para fechas vencidas
-                    'color': 'white',
-                    'fontWeight': 'bold'
-                },
-                {
-                    'if': {
-                        'filter_query': '{fecha_vencida} = "proxima"',
-                        'column_id': 'Programado'
-                    },
-                    'backgroundColor': '#feca57',  # Amarillo para fechas próximas a vencer
-                    'fontWeight': 'bold'
-                },
-                {
-                    'if': {
-                        'filter_query': '{fecha_vencida} = "futura"',
-                        'column_id': 'Programado'
-                    },
-                    'backgroundColor': '#1dd1a1',  # Verde para fechas futuras
-                    'color': 'white'
-                }
-            ],
-            tooltip_duration=None,
-            tooltip_data=[],  # Se llenará en el callback
+    # Añadir línea de referencia para avance esperado
+    today = datetime.now()
+    fig.add_trace(
+        go.Scatter(
+            x=[today, today.replace(year=today.year + 1)],
+            y=[0, 100],
+            mode='lines',
+            name='Avance Esperado',
+            line=dict(color='red', dash='dash'),
+            opacity=0.7
         )
-    ], style={'padding': '20px', 'margin': '20px 0', 'boxShadow': '0 4px 8px 0 rgba(0,0,0,0.2)', 'borderRadius': '5px',
-              'backgroundColor': 'white'}),
-])
+    )
+    
+    fig.update_layout(
+        xaxis_title="Fecha Programada",
+        yaxis_title="Porcentaje de Avance",
+        yaxis=dict(range=[0, 100]),
+        height=500
+    )
+    
+    return fig
 
-# Callback para actualizar todos los componentes basados en los filtros
-@app.callback(
-    [
-        Output('dropdown-funcionario', 'options'),
-        Output('dropdown-entidad', 'options'),
-        Output('dropdown-estado', 'options'),
-        Output('dropdown-tipo-dato', 'options'),
-        Output('indicador-total', 'children'),
-        Output('indicador-completados', 'children'),
-        Output('indicador-en-proceso', 'children'),
-        Output('indicador-pendientes', 'children'),
-        Output('grafico-avance-entidades', 'figure'),
-        Output('grafico-estado-por-entidad', 'figure'),
-        Output('grafico-cronograma', 'figure'),
-        Output('proximas-fechas', 'children'),
-        Output('tabla-indicadores', 'columns'),
-        Output('tabla-indicadores', 'data'),
-        Output('tabla-indicadores', 'tooltip_data'),
-        Output('tabla-indicadores', 'hidden_columns')  # Add this line
-    ],
-    [
-        Input('dropdown-funcionario', 'value'),
-        Input('dropdown-entidad', 'value'),
-        Input('dropdown-estado', 'value'),
-        Input('dropdown-tipo-dato', 'value')
-    ]
-)
-def actualizar_dashboard(funcionarios_seleccionados, entidades_seleccionadas, estados_seleccionados,tipos_dato_seleccionados):
-    # Cargar datos
-    df = cargar_datos()
+# Función para crear gráfico de barras apiladas del progreso por etapas
+def create_stacked_progress_chart(df):
+    if df.empty:
+        return None
+    
+    # Clasificar las columnas por etapas
+    stages = {}
+    for col in df.columns:
+        if col not in ['Funcionario', 'Entidad', 'Nive de información', 'Estado', 'Programado', 'Estado_Vencimiento', 'Porcentaje de Avance']:
+            stage = identify_process_stage(col)
+            if stage not in stages:
+                stages[stage] = []
+            stages[stage].append(col)
+    
+    # Calcular progreso por entidad y etapa
+    entities = df['Entidad'].unique()
+    progress_data = []
+    
+    for entity in entities:
+        entity_df = df[df['Entidad'] == entity]
+        
+        for stage, columns in stages.items():
+            if not columns:  # Skip if no columns for this stage
+                continue
+                
+            # Calcular avance promedio para esta etapa
+            completed = 0
+            total = 0
+            
+            for _, row in entity_df.iterrows():
+                for col in columns:
+                    if col in row:
+                        total += 1
+                        if pd.notna(row[col]) and row[col] != "" and row[col] != "-":
+                            completed += 1
+            
+            progress = (completed / total * 100) if total > 0 else 0
+            
+            progress_data.append({
+                'Entidad': entity,
+                'Etapa': stage,
+                'Progreso': round(progress, 1)
+            })
+    
+    if not progress_data:
+        return None
+        
+    df_progress = pd.DataFrame(progress_data)
+    
+    # Crear gráfico de barras apiladas
+    fig = px.bar(
+        df_progress,
+        x='Entidad',
+        y='Progreso',
+        color='Etapa',
+        title='Progreso de Entidades por Etapa del Proceso',
+        labels={'Progreso': 'Avance (%)', 'Entidad': 'Entidad', 'Etapa': 'Etapa del Proceso'},
+        category_orders={"Etapa": ["Acuerdos iniciales", "Implementación", "Verificación", "Otras actividades"]},
+        color_discrete_map={
+            'Acuerdos iniciales': '#1976D2',
+            'Implementación': '#388E3C',
+            'Verificación': '#FBC02D',
+            'Otras actividades': '#7B1FA2'
+        }
+    )
+    
+    fig.update_layout(
+        xaxis_title="Entidad",
+        yaxis_title="Porcentaje de Avance",
+        yaxis=dict(range=[0, 100]),
+        height=500,
+        barmode='stack'
+    )
+    
+    return fig
+
+# Función para crear gráfico de Gantt por funcionario
+
+def create_gantt_by_staff(df, selected_staff=None):
+    if not selected_staff:
+        return None, None
+
+    df_filtered = df[df['Funcionario'] == selected_staff].copy()
+
+    # Calcular el porcentaje de avance si no existe
+    if 'Porcentaje de Avance' not in df_filtered.columns:
+        df_filtered['Porcentaje de Avance'] = df_filtered.apply(calculate_progress, axis=1)
+
+    return create_gantt(df_filtered)
+
+# Función para crear mapa de calor de etapas con demoras
+def create_delay_heatmap(df):
+    if df.empty:
+        return None
+    
+    # Identificar etapas del proceso para cada columna
+    stages = {}
+    activity_columns = []
+    
+    for col in df.columns:
+        if col not in ['Funcionario', 'Entidad', 'Nive de información', 'Estado', 'Programado', 'Estado_Vencimiento', 'Porcentaje de Avance']:
+            stage = identify_process_stage(col)
+            stages[col] = stage
+            activity_columns.append(col)
+    
+    if not activity_columns:
+        return None
+    
+    # Calcular retrasos para cada actividad y entidad
+    delay_data = {}
+    entities = df['Entidad'].unique()
+    
+    for col in activity_columns:
+        delays = []
+        for entity in entities:
+            entity_df = df[df['Entidad'] == entity]
+            
+            # Contar cuántas actividades tienen fecha y cuántas no
+            total = len(entity_df)
+            with_date = sum(1 for _, row in entity_df.iterrows() 
+                         if pd.notna(row.get(col)) and row[col] != "" and row[col] != "-")
+            
+            # Calcular tasa de completitud (inversa de retraso)
+            completion_rate = with_date / total if total > 0 else 0
+            delay_rate = 1 - completion_rate  # Convertir a tasa de retraso
+            
+            delays.append(delay_rate)
+        
+        # Promedio de retrasos para esta actividad
+        delay_data[col] = sum(delays) / len(delays) if delays else 0
+    
+    # Organizar datos para el mapa de calor
+    heatmap_data = []
+    for col, delay in delay_data.items():
+        stage = stages[col]
+        heatmap_data.append({
+            'Actividad': col[:30] + '...' if len(col) > 30 else col,  # Truncar nombres largos
+            'Etapa': stage,
+            'Índice de Demora': round(delay * 100, 1)  # Convertir a porcentaje
+        })
+    
+    df_heatmap = pd.DataFrame(heatmap_data)
+    
+    # Ordenar por etapa y luego por índice de demora
+    df_heatmap = df_heatmap.sort_values(by=['Etapa', 'Índice de Demora'], ascending=[True, False])
+    
+    # Crear mapa de calor
+    fig = px.density_heatmap(
+        df_heatmap,
+        x='Etapa',
+        y='Actividad',
+        z='Índice de Demora',
+        title='Mapa de Calor de Demoras por Etapa y Actividad',
+        labels={'Índice de Demora': 'Demora (%)', 'Etapa': 'Etapa del Proceso', 'Actividad': 'Actividad'},
+        color_continuous_scale='Reds'
+    )
+    
+    fig.update_layout(
+        xaxis_title="Etapa del Proceso",
+        yaxis_title="Actividad",
+        height=600,
+        yaxis={'categoryorder': 'total ascending'}
+    )
+    
+    return fig
+
+# Función para estimar frecuencia de actualización
+def estimate_update_frequency(df):
+    if df.empty:
+        return None
+    
+    activity_columns = [col for col in df.columns 
+                       if col not in ['Funcionario', 'Entidad', 'Nive de información', 'Estado', 'Programado', 'Estado_Vencimiento', 'Porcentaje de Avance']]
+    
+    # Obtener fechas para actividades
+    dates_by_indicator = {}
+    
+    for _, row in df.iterrows():
+        indicator = row.get('Nive de información', 'Sin nombre')
+        
+        if indicator not in dates_by_indicator:
+            dates_by_indicator[indicator] = []
+        
+        for col in activity_columns:
+            if pd.notna(row.get(col)) and row[col] != "" and row[col] != "-":
+                date = parse_date(row[col])
+                if date:
+                    dates_by_indicator[indicator].append(date)
+    
+    # Calcular frecuencia promedio para cada indicador
+    frequency_data = []
+    
+    for indicator, dates in dates_by_indicator.items():
+        if len(dates) >= 2:
+            # Ordenar fechas
+            sorted_dates = sorted(dates)
+            
+            # Calcular diferencias en días
+            diff_days = [(sorted_dates[i+1] - sorted_dates[i]).days 
+                         for i in range(len(sorted_dates)-1)]
+            
+            if diff_days:
+                avg_days = sum(diff_days) / len(diff_days)
+                
+                # Clasificar frecuencia
+                if avg_days <= 60:  # 2 meses
+                    frequency = "Bimensual"
+                elif avg_days <= 90:  # 3 meses
+                    frequency = "Trimestral"
+                elif avg_days <= 180:  # 6 meses
+                    frequency = "Semestral"
+                else:
+                    frequency = "Anual"
+                    
+                frequency_data.append({
+                    'Indicador': indicator,
+                    'Frecuencia': frequency,
+                    'Promedio de días': round(avg_days, 1)
+                })
+    
+    if not frequency_data:
+        return None
+        
+    df_frequency = pd.DataFrame(frequency_data)
+    
+    # Contar indicadores por frecuencia
+    freq_counts = df_frequency['Frecuencia'].value_counts().reset_index()
+    freq_counts.columns = ['Frecuencia', 'Cantidad']
+    
+    # Ordenar por frecuencia
+    order = {'Bimensual': 1, 'Trimestral': 2, 'Semestral': 3, 'Anual': 4}
+    freq_counts['Orden'] = freq_counts['Frecuencia'].map(order)
+    freq_counts = freq_counts.sort_values('Orden').drop('Orden', axis=1)
+    
+    # Crear gráfico de barras
+    fig = px.bar(
+        freq_counts,
+        x='Frecuencia',
+        y='Cantidad',
+        title='Indicadores Agrupados por Frecuencia de Actualización',
+        labels={'Cantidad': 'Número de Indicadores', 'Frecuencia': 'Frecuencia de Actualización'},
+        color='Frecuencia',
+        color_discrete_map={
+            'Bimensual': '#1E88E5',
+            'Trimestral': '#43A047',
+            'Semestral': '#FB8C00',
+            'Anual': '#E53935'
+        }
+    )
+    
+    fig.update_layout(
+        xaxis_title="Frecuencia de Actualización",
+        yaxis_title="Número de Indicadores",
+        height=400
+    )
+    
+    return fig
+
+# Cargar datos
+df = load_data()
+
+# Interfaz principal
+if not df.empty:
+    # Sidebar
+    st.sidebar.header("Filtros")
+    
+    # Obtener valores únicos para filtros
+    funcionarios = ['Todos'] + sorted(df['Funcionario'].dropna().unique().tolist()) if 'Funcionario' in df.columns else ['Todos']
+    entidades = ['Todas'] + sorted(df['Entidad'].dropna().unique().tolist()) if 'Entidad' in df.columns else ['Todas']
+    
+    # Selectores de filtro
+    funcionario_seleccionado = st.sidebar.selectbox("Funcionario", funcionarios)
+    entidad_seleccionada = st.sidebar.selectbox("Entidad", entidades)
     
     # Aplicar filtros
     df_filtrado = df.copy()
     
-    if funcionarios_seleccionados:
-        df_filtrado = df_filtrado[df_filtrado['Funcionario'].isin(funcionarios_seleccionados)]
+    if funcionario_seleccionado != 'Todos' and 'Funcionario' in df.columns:
+        df_filtrado = df_filtrado[df_filtrado['Funcionario'] == funcionario_seleccionado]
     
-    if entidades_seleccionadas:
-        df_filtrado = df_filtrado[df_filtrado['Entidad'].isin(entidades_seleccionadas)]
+    if entidad_seleccionada != 'Todas' and 'Entidad' in df.columns:
+        df_filtrado = df_filtrado[df_filtrado['Entidad'] == entidad_seleccionada]
     
-    if estados_seleccionados:
-        df_filtrado = df_filtrado[df_filtrado['Estado'].isin(estados_seleccionados)]
+    # Calcular porcentaje de avance antes de todo
+    df_filtrado['Porcentaje de Avance'] = df_filtrado.apply(calculate_progress, axis=1)
     
-    if tipos_dato_seleccionados:
-        df_filtrado = df_filtrado[df_filtrado['Tipo dato'].isin(tipos_dato_seleccionados)]
+    # Pestaña principal - Diagrama de Gantt y tabla de datos
+    tab1, tab2, tab3, tab4 = st.tabs(["Seguimiento con Gantt", "Tabla de Datos", "Editar Datos", "Panel de Control"])
     
-    # Preparar opciones para dropdowns
-    opciones_funcionario = [{'label': f, 'value': f} for f in sorted(df['Funcionario'].dropna().unique())]
-    opciones_entidad = [{'label': e, 'value': e} for e in sorted(df['Entidad'].dropna().unique())]
-    opciones_estado = [{'label': e, 'value': e} for e in sorted(df['Estado'].unique())]
-    opciones_tipo_dato = [{'label': t, 'value': t} for t in sorted(df['Tipo dato'].dropna().unique())]
-    
-    # Preparar indicadores de resumen
-    total_indicadores = len(df_filtrado)
-    completados = len(df_filtrado[df_filtrado['Estado'] == 'Completo'])
-    en_proceso = len(df_filtrado[df_filtrado['Estado'] == 'Proceso'])
-    pendientes = len(df_filtrado[df_filtrado['Estado'] == 'Pendiente'])
-    
-    indicador_total = html.Div([
-        html.H4('Total Indicadores'),
-        html.P(f"{total_indicadores}", style={'fontSize': '24px', 'fontWeight': 'bold'})
-    ], style={'textAlign': 'center', 'padding': '10px', 'backgroundColor': '#3498db', 'color': 'white', 'borderRadius': '5px',
-              'boxShadow': '0 2px 4px 0 rgba(0,0,0,0.2)'})
-    
-    indicador_completados = html.Div([
-        html.H4('Completados'),
-        html.P(f"{completados}", style={'fontSize': '24px', 'fontWeight': 'bold'})
-    ], style={'textAlign': 'center', 'padding': '10px', 'backgroundColor': '#2ecc71', 'color': 'white', 'borderRadius': '5px',
-              'boxShadow': '0 2px 4px 0 rgba(0,0,0,0.2)'})
-    
-    indicador_en_proceso = html.Div([
-        html.H4('En Proceso'),
-        html.P(f"{en_proceso}", style={'fontSize': '24px', 'fontWeight': 'bold'})
-    ], style={'textAlign': 'center', 'padding': '10px', 'backgroundColor': '#f39c12', 'color': 'white', 'borderRadius': '5px',
-              'boxShadow': '0 2px 4px 0 rgba(0,0,0,0.2)'})
-    
-    indicador_pendientes = html.Div([
-        html.H4('Pendientes'),
-        html.P(f"{pendientes}", style={'fontSize': '24px', 'fontWeight': 'bold'})
-    ], style={'textAlign': 'center', 'padding': '10px', 'backgroundColor': '#e74c3c', 'color': 'white', 'borderRadius': '5px',
-              'boxShadow': '0 2px 4px 0 rgba(0,0,0,0.2)'})
-    
-    # Preparar gráfico de avance por entidades
-    df_avance_entidades = df_filtrado.groupby('Entidad')['Avance_Porcentaje'].mean().reset_index()
-    df_avance_entidades = df_avance_entidades.sort_values('Avance_Porcentaje', ascending=False)
-    
-    figura_avance_entidades = px.bar(
-        df_avance_entidades,
-        x='Entidad',
-        y='Avance_Porcentaje',
-        title='Porcentaje de Avance por Entidad',
-        labels={'Avance_Porcentaje': 'Avance (%)', 'Entidad': 'Entidad'},
-        color='Avance_Porcentaje',
-        color_continuous_scale=px.colors.sequential.Viridis
-    )
-    
-    figura_avance_entidades.update_layout(
-        xaxis={'categoryorder': 'total descending', 'title': 'Entidad'},
-        yaxis={'range': [0, 100], 'title': 'Avance (%)'},
-        plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='rgba(0,0,0,0)'
-    )
-    
-    # Preparar gráfico de estado por entidad
-    conteo_estado_entidad = df_filtrado.groupby(['Entidad', 'Estado']).size().reset_index(name='Conteo')
-    
-    figura_estado_entidad = px.bar(
-        conteo_estado_entidad,
-        x='Entidad',
-        y='Conteo',
-        title='Estado de Indicadores por Entidad',
-        color='Estado',
-        barmode='stack',
-        color_discrete_map={
-            'Completo': '#2ecc71',
-            'Proceso': '#f39c12',
-            'Pendiente': '#e74c3c'
-        }
-    )
-    
-    figura_estado_entidad.update_layout(
-        xaxis={'title': 'Entidad'},
-        yaxis={'title': 'Cantidad de Indicadores'},
-        plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='rgba(0,0,0,0)'
-    )
-    
-    # Próximas fechas programadas (ordenadas)
-    hoy = pd.Timestamp(datetime.now())
-    proximas_fechas_df = df_filtrado[df_filtrado['Programado'] >= hoy].sort_values('Programado')
-    
-    proximas_fechas_html = []
-    for _, row in proximas_fechas_df.head(5).iterrows():
-        fecha = row['Programado']
-        entidad = row['Entidad']
-        nivel_info = row['Nive de información']
-        dias_restantes = (fecha - hoy).days
+    with tab1:
+        st.header("Diagrama de Gantt")
         
-        # Determinar color según proximidad
-        if dias_restantes <= 7:
-            color = '#e74c3c'  # Rojo - Urgente
-        elif dias_restantes <= 30:
-            color = '#f39c12'  # Amarillo - Próximo
+        # Crear diagrama de Gantt mejorado
+        fig_gantt, df_gantt = create_gantt(df_filtrado)
+        
+        if fig_gantt:
+            st.plotly_chart(fig_gantt, use_container_width=True)
+            
+            # Mostrar leyenda de entidades
+            st.subheader("Leyenda de Entidades")
+            entities = df_filtrado['Entidad'].dropna().unique()
+            entity_colors = generate_entity_colors(entities)
+            
+            # Mostrar leyenda en columnas
+            cols = st.columns(4)
+            for i, entity in enumerate(entities):
+                color = entity_colors[entity]
+                cols[i % 4].markdown(f'<div style="background-color: {color}; padding: 5px; border-radius: 5px; margin: 2px; color: white;">{entity}</div>', unsafe_allow_html=True)
         else:
-            color = '#2ecc71'  # Verde - Con tiempo
+            st.warning("No hay datos suficientes para crear el diagrama de Gantt con los filtros actuales.")
+    
+    with tab2:
+        st.header("Tabla de Datos")
         
-        proximas_fechas_html.append(
-            html.Div([
-                html.Div([
-                    html.H4(f"{fecha.strftime('%d/%m/%Y')}"),
-                    html.P(f"Días restantes: {dias_restantes}", style={'fontWeight': 'bold'})
-                ], style={'width': '30%'}),
-                html.Div([
-                    html.H4(f"{entidad}"),
-                    html.P(f"{nivel_info}")
-                ], style={'width': '70%'})
-            ], style={
-                'display': 'flex',
-                'justifyContent': 'space-between',
-                'padding': '10px',
-                'margin': '10px 0',
-                'borderLeft': f'5px solid {color}',
-                'boxShadow': '0 2px 4px 0 rgba(0,0,0,0.1)',
-                'borderRadius': '5px'
-            })
+        # Aplicar estilos condicionales y mostrar la tabla
+        styled_df, df_with_status = highlight_status(df_filtrado)
+        
+        # Mostrar leyenda de colores para estados
+        st.subheader("Estados de Vencimiento")
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.markdown('<div style="background-color: #ffcccc; padding: 10px; border-radius: 5px;">Vencido</div>', unsafe_allow_html=True)
+        with col2:
+            st.markdown('<div style="background-color: #ffffcc; padding: 10px; border-radius: 5px;">Próximo a vencer (30 días)</div>', unsafe_allow_html=True)
+        with col3:
+            st.markdown('<div style="background-color: #ccffcc; padding: 10px; border-radius: 5px;">En tiempo</div>', unsafe_allow_html=True)
+        
+        # Mostrar datos filtrados con estilos
+        st.dataframe(styled_df, use_container_width=True)
+        
+        # Mostrar resumen de progreso
+        st.subheader("Resumen de Progreso")
+        promedio_avance = df_with_status['Porcentaje de Avance'].mean()
+        tareas_completadas = len(df_with_status[df_with_status['Porcentaje de Avance'] == 100])
+        tareas_en_progreso = len(df_with_status[(df_with_status['Porcentaje de Avance'] > 0) & (df_with_status['Porcentaje de Avance'] < 100)])
+        tareas_no_iniciadas = len(df_with_status[df_with_status['Porcentaje de Avance'] == 0])
+        
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("Promedio de Avance", f"{promedio_avance:.1f}%")
+        col2.metric("Tareas Completadas", tareas_completadas)
+        col3.metric("Tareas en Progreso", tareas_en_progreso)
+        col4.metric("Tareas No Iniciadas", tareas_no_iniciadas)
+        
+        # Botón para descargar datos
+        csv = download_dataframe(df_with_status)
+        st.download_button(
+            label="Descargar datos como CSV",
+            data=csv,
+            file_name="seguimiento_indicadores.csv",
+            mime="text/csv"
         )
     
-    if not proximas_fechas_html:
-        proximas_fechas_html = [
-            html.Div("No hay fechas programadas próximamente", 
-                     style={'textAlign': 'center', 'padding': '20px', 'color': '#7f8c8d'})
-        ]
-    
-    # Preparar gráfico de cronograma
-    # Ordenar por fecha programada
-    df_cronograma = df_filtrado.copy()
-    
-    # Asegurar que todas las filas tengan una fecha de inicio y fin
-    fecha_inicial = pd.Timestamp('2024-01-01')
-    df_cronograma['fecha_inicio'] = df_cronograma['Suscripción acuerdo de compromiso'].fillna(fecha_inicial)
-    df_cronograma['fecha_fin'] = df_cronograma['Programado'].fillna(hoy + pd.Timedelta(days=30))
-    
-    # Crear gráfico de Gantt
-    figura_cronograma = px.timeline(
-        df_cronograma,
-        x_start='fecha_inicio',
-        x_end='fecha_fin',
-        y='Nive de información',
-        color='Estado',
-        title='Cronograma de Actividades por Indicador',
-        color_discrete_map={
-            'Completo': '#2ecc71',
-            'Proceso': '#f39c12',
-            'Pendiente': '#e74c3c'
-        },
-        hover_data=['Entidad', 'Funcionario', 'Avance_Porcentaje']
-    )
-    
-    # Agregar línea vertical para la fecha actual
-    figura_cronograma.add_vline(x=hoy, line_width=3, line_dash="dash", line_color="red")
-    
-    # Agregar anotación para la fecha actual
-    figura_cronograma.add_annotation(
-        x=hoy,
-        y=0,
-        text="Hoy",
-        showarrow=True,
-        arrowhead=1,
-        ax=0,
-        ay=30
-    )
-    
-    figura_cronograma.update_layout(
-        xaxis_title="Fecha",
-        yaxis_title="Indicador",
-        plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='rgba(0,0,0,0)',
-        yaxis={'autorange': 'reversed'}
-    )
-    
-    # Preparar tabla de detalles con color para fechas programadas
-
-    columnas_tabla = [
-        {'name': 'Cod', 'id': 'Cod'},
-        {'name': 'Funcionario', 'id': 'Funcionario'},
-        {'name': 'Entidad', 'id': 'Entidad'},
-        {'name': 'Nivel de información', 'id': 'Nive de información'},
-        {'name': 'Frecuencia', 'id': 'Frecuencia actualizacion'},
-        {'name': 'Tipo dato', 'id': 'Tipo dato'},
-        {'name': 'Estado', 'id': 'Estado'},
-        {'name': 'Avance (%)', 'id': 'Avance_Porcentaje', 'type': 'numeric', 'format': {'specifier': '.0f'}},
-        {'name': 'Programado', 'id': 'Programado', 'type': 'datetime'},
-        {'name': 'Observaciones', 'id': 'Observaciones'},
-        # Changed approach for hidden column
-        {'name': 'fecha_vencida', 'id': 'fecha_vencida'}
-    ]
-    
-    # Formatear las fechas para la tabla y añadir la clasificación de vencimiento
-    df_para_tabla = df_filtrado.copy()
-    
-    # Agregar columna para determinar si la fecha está vencida, próxima a vencer o en el futuro
-    df_para_tabla['fecha_vencida'] = 'futura'  # Por defecto todas son futuras
-    
-    if 'Programado' in df_para_tabla.columns and pd.api.types.is_datetime64_any_dtype(df_para_tabla['Programado']):
-        # Marcar fechas vencidas (antes de hoy)
-        df_para_tabla.loc[df_para_tabla['Programado'] < hoy, 'fecha_vencida'] = 'vencida'
+    with tab3:
+        st.header("Editar Datos")
         
-        # Marcar fechas próximas a vencer (en los próximos 15 días)
-        fecha_limite = hoy + timedelta(days=15)
-        df_para_tabla.loc[(df_para_tabla['Programado'] >= hoy) & 
-                           (df_para_tabla['Programado'] <= fecha_limite), 
-                           'fecha_vencida'] = 'proxima'
+        # Crear una copia editable de los datos
+        edited_df = st.data_editor(df, use_container_width=True, num_rows="dynamic")
         
-        # Formatear fechas para mostrar en la tabla
-        df_para_tabla['Programado'] = df_para_tabla['Programado'].dt.strftime('%d/%m/%Y')
+        # Botón para guardar cambios
+        if st.button("Guardar Cambios"):
+            # Guardar datos en un archivo temporal
+            edited_csv = download_dataframe(edited_df)
+            with open("Prueba seguimiento.csv", "w", encoding="utf-8") as f:
+                f.write(edited_csv)
+            
+            st.success("Cambios guardados correctamente.")
+            st.rerun()  # Recargar la aplicación para reflejar los cambios
     
-    datos_tabla = df_para_tabla.to_dict('records')
-    
-    # Preparar datos para tooltips en la tabla
-    tooltip_data = []
-    for row in datos_tabla:
-        tooltip_row = {}
-        for col in ['Nive de información', 'Observaciones']:
-            if col in row and pd.notna(row[col]):
-                tooltip_row[col] = {'value': str(row[col]), 'type': 'markdown'}
+    with tab4:
+        st.header("Panel de Control General")
         
-        # Añadir tooltip informativo para las fechas según su estado
-        if 'fecha_vencida' in row:
-            if row['fecha_vencida'] == 'vencida':
-                tooltip_row['Programado'] = {'value': 'Fecha vencida', 'type': 'markdown'}
-            elif row['fecha_vencida'] == 'proxima':
-                tooltip_row['Programado'] = {'value': 'Fecha próxima a vencer', 'type': 'markdown'}
+        # Asegurarse que el dataframe tiene los datos necesarios
+        df_pc = df_filtrado.copy()
+        df_pc['Porcentaje de Avance'] = df_pc.apply(calculate_progress, axis=1)
+        df_pc['Estado_Vencimiento'] = df_pc.apply(check_status, axis=1)
         
-        tooltip_data.append(tooltip_row)
-    
-    return (
-        opciones_funcionario,
-        opciones_entidad,
-        opciones_estado,
-        opciones_tipo_dato,
-        indicador_total,
-        indicador_completados,
-        indicador_en_proceso,
-        indicador_pendientes,
-        figura_avance_entidades,
-        figura_estado_entidad,
-        figura_cronograma,
-        proximas_fechas_html,
-        columnas_tabla,
-        datos_tabla,
-        tooltip_data,
-        ['fecha_vencida']
-    )
-
-if __name__ == '__main__':
-    app.run(debug=True)
+        # Primera fila de gráficos - Completitud y Estado
+        st.subheader("Indicadores Generales")
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            # Gráfico 1: Porcentaje de completitud por entidad
+            fig_completeness = create_completeness_by_entity(df_pc)
+            if fig_completeness:
+                st.plotly_chart(fig_completeness, use_container_width=True)
+            else:
+                st.warning("No hay datos suficientes para mostrar la completitud por entidad.")
+        
+        with col2:
+            # Gráfico 2: Estado de los proyectos
+            fig_status = create_project_status_chart(df_pc)
+            if fig_status:
+                st.plotly_chart(fig_status, use_container_width=True)
+            else:
+                st.warning("No hay datos suficientes para mostrar el estado de los proyectos.")
+        
+        # Segunda fila - Fechas programadas vs avance y barras apiladas
+        st.subheader("Seguimiento de Avance por Etapas")
+        
+        # Gráfico 3: Fechas programadas vs avance actual
+        fig_schedule = create_schedule_vs_progress(df_pc)
+        if fig_schedule:
+            st.plotly_chart(fig_schedule, use_container_width=True)
+        else:
+            st.warning("No hay fechas programadas suficientes para mostrar la relación de avance.")
+            
+        # Gráfico 4: Gráfico de barras apiladas
+        fig_stacked = create_stacked_progress_chart(df_pc)
+        if fig_stacked:
+            st.plotly_chart(fig_stacked, use_container_width=True)
+        else:
+            st.warning("No hay datos suficientes para mostrar el progreso por etapas.")
+        
+        # Tercera fila - Gantt por funcionario y mapa de calor
+        st.subheader("Análisis Detallado")
+        
+        # Gráfico 5: Gantt por funcionario
+        st.markdown("#### Diagrama de Gantt por Funcionario")
+        # Selector de funcionario
+        func_options = ['Seleccione un funcionario'] + sorted(df['Funcionario'].dropna().unique().tolist())
+        selected_func = st.selectbox("Seleccione un funcionario para ver su diagrama de Gantt", func_options)
+        
+        if selected_func != 'Seleccione un funcionario':
+            fig_gantt_func, _ = create_gantt_by_staff(df, selected_func)
+            if fig_gantt_func:
+                st.plotly_chart(fig_gantt_func, use_container_width=True)
+            else:
+                st.warning(f"No hay datos suficientes para mostrar el diagrama de Gantt para {selected_func}.")
+        
+        # Gráfico 6: Mapa de calor de etapas con demoras
+        st.markdown("#### Mapa de Calor de Demoras por Etapa")
+        fig_heatmap = create_delay_heatmap(df_pc)
+        if fig_heatmap:
+            st.plotly_chart(fig_heatmap, use_container_width=True)
+        else:
+            st.warning("No hay datos suficientes para mostrar el mapa de calor de demoras.")
+        
+        # Cuarta fila - Frecuencia de actualización
+        st.subheader("Frecuencia de Actualización")
+        
+        # Gráfico 7: Gráfico de barras de frecuencia
+        fig_frequency = estimate_update_frequency(df_pc)
+        if fig_frequency:
+            st.plotly_chart(fig_frequency, use_container_width=True)
+        else:
+            st.warning("No hay suficientes fechas para estimar la frecuencia de actualización.")
+        
+        # Sección de métricas clave
+        st.subheader("Métricas Clave")
+        
+        # Crear métricas clave
+        col1, col2, col3, col4 = st.columns(4)
+        
+        # Métrica 1: Promedio de avance
+        avg_progress = df_pc['Porcentaje de Avance'].mean()
+        col1.metric("Avance Promedio", f"{avg_progress:.1f}%")
+        
+        # Métrica 2: Porcentaje de indicadores vencidos
+        vencidos = len(df_pc[df_pc['Estado_Vencimiento'] == 'Vencido'])
+        porcentaje_vencidos = (vencidos / len(df_pc) * 100) if len(df_pc) > 0 else 0
+        col2.metric("Indicadores Vencidos", f"{porcentaje_vencidos:.1f}%")
+        
+        # Métrica 3: Indicadores completados
+        completados = len(df_pc[df_pc['Porcentaje de Avance'] == 100])
+        porcentaje_completados = (completados / len(df_pc) * 100) if len(df_pc) > 0 else 0
+        col3.metric("Indicadores Completados", f"{porcentaje_completados:.1f}%")
+        
+        # Métrica 4: Indicadores sin iniciar
+        sin_iniciar = len(df_pc[df_pc['Porcentaje de Avance'] == 0])
+        porcentaje_sin_iniciar = (sin_iniciar / len(df_pc) * 100) if len(df_pc) > 0 else 0
+        col4.metric("Indicadores Sin Iniciar", f"{porcentaje_sin_iniciar:.1f}%")
+        
+        # Botón para descargar informe
+        st.markdown("#### Descargar Informe")
+        
+        # Preparar informe básico
+        buffer = io.StringIO()
+        buffer.write("# INFORME DE SEGUIMIENTO DE INDICADORES\n\n")
+        buffer.write(f"Fecha de generación: {datetime.now().strftime('%d/%m/%Y')}\n\n")
+        buffer.write(f"## Resumen General\n")
+        buffer.write(f"- Avance promedio: {avg_progress:.1f}%\n")
+        buffer.write(f"- Indicadores completados: {completados} ({porcentaje_completados:.1f}%)\n")
+        buffer.write(f"- Indicadores en progreso: {len(df_pc[(df_pc['Porcentaje de Avance'] > 0) & (df_pc['Porcentaje de Avance'] < 100)])}\n")
+        buffer.write(f"- Indicadores sin iniciar: {sin_iniciar} ({porcentaje_sin_iniciar:.1f}%)\n")
+        buffer.write(f"- Indicadores vencidos: {vencidos} ({porcentaje_vencidos:.1f}%)\n\n")
+        
+        # Agregar detalle por entidad
+        buffer.write("## Detalle por Entidad\n")
+        entidades = df_pc['Entidad'].unique()
+        for entidad in entidades:
+            df_ent = df_pc[df_pc['Entidad'] == entidad]
+            avg_ent = df_ent['Porcentaje de Avance'].mean()
+            vencidos_ent = len(df_ent[df_ent['Estado_Vencimiento'] == 'Vencido'])
+            buffer.write(f"### {entidad}\n")
+            buffer.write(f"- Avance promedio: {avg_ent:.1f}%\n")
+            buffer.write(f"- Indicadores vencidos: {vencidos_ent}\n")
+            buffer.write(f"- Total indicadores: {len(df_ent)}\n\n")
+        
+        # Botón de descarga
+        st.download_button(
+            label="Descargar Informe en Markdown",
+            data=buffer.getvalue(),
+            file_name="informe_seguimiento.md",
+            mime="text/markdown"
+        )

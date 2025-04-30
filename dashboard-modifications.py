@@ -10,10 +10,10 @@ import random
 import numpy as np
 
 # Configuración de la página
-st.set_page_config(page_title="Seguimiento de Indicadores", layout="wide")
+st.set_page_config(page_title="Seguimiento de Datos Temáticos", layout="wide")
 
 # Título del dashboard
-st.title("Dashboard de Seguimiento de Indicadores")
+st.title("Dashboard de Datos Temáticos")
 
 # Cargar datos con mejor manejo de errores
 @st.cache_data

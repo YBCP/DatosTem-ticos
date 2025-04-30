@@ -1,193 +1,193 @@
-﻿Cod;Funcionario;Entidad;Nive de información;Frecuencia actualizacion ;Tipo dato;Actas de acercamiento y manifestación de interés;Suscripción acuerdo de compromiso;Entrega acuerdo de compromiso;Acuerdo de compromiso;Gestion acceso a los datos y documentos requeridos ;Análisis de información;Cronograma Concertado;Seguimiento a los acuerdos definidos;Registro;ET;CO;DD;REC;SERVICIO;Resultados orientación técnica;Verificación del servicio web geográfico;Verificar aprobar resultados;Revisar y validar los datos cargados en la base de datos;Aprobación resultados orientación;Disponer datos temáticos;"Catálogo de recursos
-geográficos";Oficios de cierre;Estado;Observaciones;Programado
-2;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Indicador de Espacio Público por Localidad;Anual;Actualizar;Si;24/01/2024;31/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;Proceso;En proceso oficio de cierre;31/03/2025
-3;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Espacio Público Recuperado;Anual;Actualizar;Si;24/01/2024;24/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;Proceso;En proceso oficio de cierre;31/03/2025
-8;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Módulo de Paradero;Semestral;Actualizar;Si;24/01/2024;24/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;Proceso;En proceso oficio de cierre;31/03/2025
-11;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Construcción de uso público;Anual;Actualizar;Si;24/01/2024;24/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;Proceso;En proceso oficio de cierre;31/03/2025
-12;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Predio de uso público;Anual;Actualizar;Si;24/01/2024;24/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;Proceso;En proceso oficio de cierre;31/03/2025
-13;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Perímetro de urbanización;Anual;Actualizar;Si;24/01/2024;24/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;Proceso;En proceso oficio de cierre;31/03/2025
-17;Daniel Alberto Morales Dueñas;Secretaría Distrital de Gobierno;Alcaldía Local;Anual;Actualizar;Si;15/07/2024;17/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;Proceso;En proceso oficio de cierre;
-18;Daniel Alberto Morales Dueñas;Secretaría Distrital de Gobierno;Intervención;Anual;Actualizar;Si;15/07/2024;17/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;Proceso;En proceso oficio de cierre;
-22;Daniel Alberto Morales Dueñas;Secretaría Distrital de Gobierno;Microempresa Local;Anual;Nuevo;Si;15/07/2024;17/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;Proceso;En proceso oficio de cierre;
-;Daniel Alberto Morales Dueñas;Secretaría Distrital de Gobierno;Área de Mejoramiento de Espacio Público;Anual;Nuevo;Si;;;;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;Proceso;En proceso oficio de cierre;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Casa de Igualdad de Oportunidades para las Mujeres;Semestral;Actualizar;Si;20/02/2025;8/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Área de acceso peatonal de las manzanas del cuidado;Bimensual;Actualizar;Si;20/02/2025;8/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Área de cobertura de servicios de las manzanas del cuidado;Bimensual;Actualizar;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Equipamientos Ancla de las Manzanas del Cuidado;Bimensual;Actualizar;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Localidades con manzanas del cuidado activas;Bimensual;Actualizar;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Servicios prestados en las manzanas del cuidado;Trimestral;Actualizar;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Asesinatos de Mujeres por localidad;Trimestral;Actualizar;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Delitos Sexuales por localidad;Trimestral;Actualizar;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Violencia intrafamiliar por localidad;Trimestral;Actualizar;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Lesiones personales por localidad;Trimestral;Actualizar;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Riesgo de Feminicidio por localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones de Línea Purpura Distrital por localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Psicosociales Casa Todas por Localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Intervenciones Sociales Casa Todas por Localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Socio jurídicas Casa Todas por Localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones por intervenciones sociales CIOM por localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones por intervenciones sociales CIOM por punto de atención;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Psicosociales CIOM por Localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Psicosociales CIOM por Punto Atención;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Socio jurídicas CIOM por Localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Socio jurídicas CIOM por Punto Atención;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones DUPLAS por localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones de Duplas en transporte público por localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones psicosociales en otros espacios institucionales por Localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones socio jurídicas en otros espacios institucionales por Localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones socio jurídicas en hospitales por localidad;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones psicosociales en Sistema distrital de cuidado;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones socio jurídicas en Sistema distrital de cuidado;Trimestral;Actualizar;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones del sistema distrital de cuidado InfoCuidado ;Anual;Nuevo;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Sistemas de alertas por localidad;Semestral;Actualizar;Si;19/02/2025;7/03/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Territorialización de la inversión por localidad;Anual;Actualizar;Si;19/02/2025;7/03/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;31/05/2025
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Beneficiarios de alimentación por localidad;Semestral;Actualizar;Si;19/02/2025;22/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Beneficiarios de movilidad por localidad;Semestral;Actualizar;Si;19/02/2025;22/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Dirección Locales de Educación;Anual;Actualizar;Si;19/02/2025;9/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Colegios;Trimestral;Actualizar;Si;19/02/2025;14/03/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;31/05/2025
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Colegios Oficiales nuevos y en restitución;Semestral;Actualizar;Si;19/02/2025;23/05/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Pruebas Saber 11;Anual;Actualizar;Si;19/02/2025;17/06/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Densidad de matriculados en Colegios Oficiales;Anual;Actualizar;Si;19/02/2025;12/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de deserción escolar no oficial por localidad;Anual;Actualizar;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de deserción escolar no oficial por UPZ;Anual;Actualizar;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de deserción escolar oficial por localidad;Anual;Actualizar;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de deserción escolar oficial por UPZ;Anual;Actualizar;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de aprobación escolar no oficial por localidad;Anual;Actualizar;Si;19/02/2025;9/07/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de aprobación escolar no oficial por UPZ;Anual;Actualizar;Si;19/02/2025;9/07/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de aprobación escolar oficial por localidad;Anual;Actualizar;Si;19/02/2025;9/07/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de aprobación escolar oficial por UPZ;Anual;Actualizar;Si;19/02/2025;9/07/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de reprobación escolar no oficial por localidad;Anual;Actualizar;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de reprobación escolar no oficial por UPZ;Anual;Actualizar;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de reprobación escolar oficial por localidad;Anual;Actualizar;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de reprobación escolar oficial por UPZ;Anual;Actualizar;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Matrícula Oficial primera infancia;Anual;Actualizar;Si;19/02/2025;8/10/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Matrícula Oficial jornada única;Anual;Actualizar;Si;19/02/2025;8/10/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Matrícula total en colegios oficiales;Anual;Actualizar;Si;19/02/2025;8/10/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Demanda de cupos sector oficial;Anual;Actualizar;Si;19/02/2025;18/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Oferta de cupos sector oficial;Anual;Actualizar;Si;19/02/2025;8/09/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Nivel de formación de docentes por localidad en colegios de clase distrital;Anual;Actualizar;Si;19/02/2025;14/11/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Uso de recursos naturales en colegios oficiales;Semestral;Actualizar;Si;19/02/2025;21/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Consumo per cápita de recursos naturales en colegios oficiales;Semestral;Actualizar;Si;19/02/2025;21/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de cobertura bruta por localidad y nivel educativo;Anual;Actualizar;Si;19/02/2025;10/11/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
-;Diana Constanza Carvajal Peña;Instituto Distrital para la Protección de la Niñez y la Juventud IDIPRON;Unidad de Protección Integral UPI;Anual;Actualizar;Si;19/02/2025;19/03/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;31/05/2025
+﻿Cod;Funcionario;Entidad;Nivel Información ;Frecuencia actualizacion ;TipoDato;Actual;Nuevo;Actas de acercamiento y manifestación de interés;Suscripción acuerdo de compromiso;Entrega acuerdo de compromiso;Acuerdo de compromiso;Gestion acceso a los datos y documentos requeridos ; Análisis de información;Cronograma Concertado;Seguimiento a los acuerdos;Registro;ET;CO;DD;REC;SERVICIO;Resultados de orientación técnica;Verificación del servicio web geográfico;Verificar Aprobar Resultados;Revisar y validar los datos cargados en la base de datos;Aprobación resultados obtenidos en la rientación;Disponer datos temáticos;"Catálogo de recursos
+geográficos";Oficios de cierre;Estado;Observación;Programado
+2;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Indicador de Espacio Público por Localidad;Anual;Actualizar;1;;Si;24/01/2024;31/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;31/03/2025
+3;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Espacio Público Recuperado;Anual;Actualizar;1;;Si;24/01/2024;24/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;31/03/2025
+8;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Módulo de Paradero;Semestral;Actualizar;1;;Si;24/01/2024;24/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;31/03/2025
+11;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Construcción de uso público;Anual;Actualizar;1;;Si;24/01/2024;24/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;31/03/2025
+12;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Predio de uso público;Anual;Actualizar;1;;Si;24/01/2024;24/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;31/03/2025
+13;Daniel Alberto Morales Dueñas;Departamento Administrativo de la Defensoría del Espacio Publico- DADEP;Perímetro de urbanización;Anual;Actualizar;1;;Si;24/01/2024;24/01/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;31/03/2025
+17;Daniel Alberto Morales Dueñas;Secretaría Distrital de Gobierno;Alcaldía Local;Anual;Actualizar;1;;Si;15/07/2024;17/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;
+18;Daniel Alberto Morales Dueñas;Secretaría Distrital de Gobierno;Intervención;Anual;Actualizar;1;;Si;15/07/2024;17/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;
+22;Daniel Alberto Morales Dueñas;Secretaría Distrital de Gobierno;Microempresa Local;Anual;Nuevo;;1;Si;15/07/2024;17/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;
+;Daniel Alberto Morales Dueñas;Secretaría Distrital de Gobierno;Área de Mejoramiento de Espacio Público;Anual;Nuevo;;1;Si;;;;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;
+23;Diana Constanza Carvajal Peña;Instituto Distrital de Protección y Bienestar Animal-IDPYBA;Urgencia Veterinaria ;Semestral;Actualizar;1;;Si;11/07/2024;26/08/2024;Si;Si;Si;Si;Si;-;-;-;-;-;-;No;No;No;No;No;No;No;;;En proceso firma Acuerdo Compromiso;
+24;Diana Constanza Carvajal Peña;Instituto Distrital de Protección y Bienestar Animal-IDPYBA;Brigada Médica ;Semestral;Nuevo;;1;Si;11/07/2024;23/09/2024;Si;Si;Si;Si;Si;-;-;-;-;-;-;No;No;No;No;No;No;No;;;En proceso firma Acuerdo Compromiso;
+25;Diana Constanza Carvajal Peña;Instituto Distrital de Protección y Bienestar Animal-IDPYBA;Esterilización ;Semestral;Nuevo;;1;Si;11/07/2024;23/10/2024;Si;;;;;;;;;;;No;;;;;;;;;;
+26;Diego Harvey Marín Rodríguez;Caja de la Vivienda Popular - CVP;Reasentamiento humano;Semestral,;Actualizar;1;;Si;26/06/2024;26/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;N/A;Si;No. mayo semana 1;No;No;;mayo;
+27;Diego Harvey Marín Rodríguez;Caja de la Vivienda Popular - CVP;Titulación Predial;Semestral,;Actualizar;1;;Si;26/06/2024;26/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;N/A;Si;No. mayo semana 1;No;No;;mayo;
+28;Diego Harvey Marín Rodríguez;Caja de la Vivienda Popular - CVP;Mejoramiento de barrios;Semestral,;Actualizar;1;;Si;26/06/2024;26/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;N/A;Si;No. mayo semana 1;No;No;;mayo;
+29;Diego Harvey Marín Rodríguez;Caja de la Vivienda Popular - CVP;Mejoramiento de vivienda - Plan Terrazas;Semestral,;Actualizar;1;;Si;26/06/2024;26/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;N/A;Si;No. mayo semana 1;No;No;;mayo;
+30;Diana Constanza Carvajal Peña;Fondo de Prestaciones Económicas, Censantías y Pensiones - FONCEP;Pensionados Activos del Fondo de Pensiones Públicas de Bogotá FONCEP;Semestral,;Actualizar;1;;Si;31/07/2024;31/07/2023;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;Si;Si;Si;Si;Si;Si;No;No;;En proceso oficio de cierre;
+31;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Comando de Atención Inmediata;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+32;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Cárcel;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+33;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Casa de Justicia;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+34;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Centro de Comando, Control, Comunicaciones y Cómputo de Bogotá - C4;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+35;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Centro de Traslado por Protección;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+36;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Comando Operativo de Seguridad Ciudadana;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+37;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Centro de Atención a Víctimas;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+38;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Cuadrante de Policía;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+39;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Delito de Alto Impacto;Mensual;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+40;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Estación de Policía;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+41;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Incidente Reportado;Mensual;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+42;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Incidente Tramitado;Mensual;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+43;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Medida Correctiva;Mensual;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+44;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Sala de Atención al Usuario;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+45;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Sistema de Responsabilidad Penal para Adolescentes;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+46;Diego Harvey Marín Rodríguez;Secretaría Distrital de Seguridad, Convivencia y Justicia-SDSCJ;Unidad de Reacción Inmediata;Semestral;Actualizar;1;;Si;3/07/2024;30/06/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;-;Si;No;No;N/A;Si;No. mayo semana 1;No;No;;mayo;
+47;Luz Carolina Huertas/Martha Vargas;Unidad Administrativa Especial de Catastro Distrital UAECD;Variación área construida por sector catastral;Anual;Nuevo;;1;Si;9/08/2024;30/10/2024;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;;
+48;Luz Carolina Huertas/Martha Vargas;Unidad Administrativa Especial de Catastro Distrital UAECD;Densidad predial por sector catastral;Anual;Nuevo;;1;Si;9/08/2024;30/10/2024;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;;
+49;Luz Carolina Huertas/Martha Vargas;Unidad Administrativa Especial de Catastro Distrital UAECD;Tipología predial (PH/NPH) por sector catastral;Anual;Nuevo;;1;Si;9/08/2024;30/10/2024;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;;
+50;Luz Carolina Huertas/Martha Vargas;Unidad Administrativa Especial de Catastro Distrital UAECD;Altura Manzanas por Sector (Nota 3);Anual;Nuevo;;1;Si;9/08/2024;30/10/2024;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;;
+51;Luz Carolina Huertas;Unidad Administrativa Especial de Catastro Distrital UAECD;Base Catastral PDA -UAECD; Trimestral;Actualizar;1;;Si;11/07/2024;;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Aparece ultima actualización 01/05/2024;
+52;Luz Carolina Huertas;Unidad Administrativa Especial de Catastro Distrital UAECD;Zona Homogénea Física ;Anual;Actualizar;1;;Si;11/07/2024;15/07/2024;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;;
+53;Luz Carolina Huertas;Unidad Administrativa Especial de Catastro Distrital UAECD;Zona Homogénea Geoeconómica;Anual;Actualizar;1;;Si;11/07/2024;15/07/2024;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;;
+54;Luz Carolina Huertas;Unidad Administrativa Especial de Catastro Distrital UAECD;Predio Topográfico ;Semestral;Actualizar;1;;Si;11/07/2024; 15/07/2024;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;;
+55;Leila Awad Cortés;Jardin Botánico de Bogota- JBB;Arbolado Urbano;Mensual;Actualizar;1;;Si;9/07/2024;16/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;-;-;No: EC;Si;No;Si;No;No;No;;;;
+56;Leila Awad Cortés;Jardin Botánico de Bogota- JBB;Colección Viva;Anual;Actualizar;1;;Si;9/07/2024;16/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;-;-;No: EC;Si;No;Si;No;No;No;;;;
+57;Leila Awad Cortés;Jardin Botánico de Bogota- JBB;Herbario;Anual;Actualizar;1;;Si;9/07/2024;16/07/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;-;-;No: EC;Si;No;Si;No;No;No;;;;
+58;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Proyecto de Vivienda con Oferta Disponible;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+59;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Vivienda Habilitada;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+60;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Predio Declarado de Construcción y Desarrollo Prioritario;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+61;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Infraestructura de Acueducto y Alcantarillado Comunitario;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+62;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Área de Prestación de Servicio;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+63;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Barrio en Proceso de Legalización;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+64;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Barrio en Proceso de Regularización;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+65;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Estrategias Innovación Fortalecimiento Social;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+66;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Macroterritorio;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+67;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Territorio Priorizado de Mejoramiento;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+68;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Mejoramiento Vivienda Habitabilidad;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+69;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Intervención Lineal de Mejoramiento Entorno;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+70;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Territorio de Transición;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+71;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Hogar Estructurado Plan Terrazas;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+72;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Polígono de Monitoreo;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+73;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Ocupación Ilegal;Anual;Actualizar;1;;si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+74;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Proyecto de Vivienda con Permiso de Enajenación;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+75;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Subsidio Arriendo Transitorio;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+76;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Subsidio Mi Ahorro Mi Hogar;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+77;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Proyecto de Vivienda Inscrito en Mesa de Soluciones;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+78;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Subsidio de Vivienda Rural;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;Marzo semana 4;Abril - semana 2;Completo;Completo;Completo;Abril - semana 3;No: ET;No;No;N/A;No;No - Abril semana 4;No;;;;30/04/2025
+79;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Macroterritorio Rural;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;Marzo semana 4;Abril - semana 2;Completo;Completo;Completo;Abril - semana 3;No: ET;No;No;N/A;No;No - Abril semana 4;No;;;;30/04/2025
+80;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Microterritorio Rural;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;Marzo semana 4;Abril - semana 2;Completo;Completo;Completo;Abril - semana 3;No: ET;No;No;N/A;No;No - Abril semana 4;No;;;;30/04/2025
+81;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Bordes Urbanos Ecobarrios;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;Marzo semana 4;Abril - semana 2;Completo;Completo;Completo;Abril - semana 3;No: ET;No;No;N/A;No;No - Abril semana 4;No;;;;30/04/2025
+82;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Revitalización Ámbitos Intervención;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;Marzo semana 4;Abril - semana 2;Completo;Completo;Completo;Abril - semana 3;No: ET;No;No;N/A;No;No - Abril semana 4;No;;;;30/04/2025
+83;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Revitalización Proyectos de Intervención;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;Marzo semana 4;Abril - semana 2;Completo;Completo;Completo;Abril - semana 3;No: ET;No;No;N/A;No;No - Abril semana 4;No;;;;30/04/2025
+84;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Recuperación Espacio Público para el Cuidado Sectores Priorizados;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;Marzo semana 4;Abril - semana 2;Completo;Completo;Completo;Abril - semana 3;No: ET;No;No;N/A;No;No - Abril semana 4;No;;;;30/04/2025
+85;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Recuperación Espacio Público para el Cuidado Intervenciones;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;Marzo semana 4;Abril - semana 2;Completo;Completo;Completo;Abril - semana 3;No: ET;No;No;N/A;No;No - Abril semana 4;No;;;;30/04/2025
+86;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Acupuntura Urbana Sectores Priorizados;Anual;Actualizar;1;;Si;22/03/2024;31/07/2024;Si;Si;Si;Si;Si;Marzo semana 4;Abril - semana 2;Completo;Completo;Completo;Abril - semana 3;No: ET;No;No;N/A;No;No - Abril semana 4;No;;;;30/04/2025
+87;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Estación radioelectrica;Anual;Nuevo;;1;Si;22/03/2024;30/06/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+88;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Intervención y proteccion a moradores;Anual;Nuevo;;1;Si;22/03/2024;30/06/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+89;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Tejido Urbano;Anual;Nuevo;;1;Si;22/03/2024;30/06/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+90;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Zona de Oportunidad;Anual;Nuevo;;1;Si;22/03/2024;30/06/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+91;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Área Potencial Disponible;Anual;Nuevo;;1;Si;22/03/2024;30/06/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+92;Diego Harvey Marín Rodríguez;Secretaría Distrital del Hábitat -SDHT;Inventario de Suelo Disponible;Anual;Nuevo;;1;Si;22/03/2024;30/06/2024;Si;Si;Si;Si;Si;En revisión;-;Completo;Completo;Completo;-;No: ET;No;No;N/A;No;No;No;;;;
+93;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Tramo WQI ;Anual;Actualizar;1;;Si;24/09/2024;4/10/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+94;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Valla Tubular Comercial;Trimestral;Actualizar;1;;Si;24/09/2024; 04/10/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+95;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Estación calidad del agua ;Anual;Actualizar;1;;Si;24/09/2024;4/10/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+96;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Negocios verdes ;Trimestral;Actualizar;1;;Si;24/09/2024;4/10/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+97;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Área de Ocupación Público Prioritaria Franja de Adecuación;Anual;Actualizar;1;;Si;24/09/2024;4/10/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+98;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Áreas Compatibles con Minería ;Anual;Actualizar;1;;Si;24/09/2024;11/10/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+99;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Franja de adecuación de los cerros orientales;Anual;Actualizar;1;;si;24/09/2024;11/10/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+100;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Medida de Protección Cerro Suba ; Anual;Actualizar;1;;Si;24/09/2024;11/10/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+101;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Páramo Cruz Verde Sumapaz ;Anual;Actualizar;1;;Si;24/09/2024;11/10/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+102;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;RFPP Cuenca alta del río Bogotá; Anual;Actualizar;1;;Si;24/09/2024; 11/10/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+103;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Zonificación Reserva Protectora Bosque Oriental de Bogotá;Anual;Actualizar;1;;Si;24/09/2024;18/10/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+104;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Zona de Ronda de Protección del Río Bogotá;Anual;Actualizar;1;;Si;24/09/2024;18/10/2024;Si;Si;Si;Si;Si;Completo;Completo;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+105;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Zonificación Reserva Thomas Van Der Hammen;Anual;Actualizar;1;;Si;24/09/2024;18/10/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+106;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Ronda Hidráulica. Bogotá. D.C. Decreto 190 de 2004 (No vigente desde el 30 de diciembre de 2021);Anual;Actualizar;1;;Si;24/09/2024;25/10/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+107;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Corredor ecológico de ronda. Bogotá D.C. Decreto 190 de 2004 (No vigente desde el 30 de diciembre de 2021);Anual;Actualizar;1;;Si;24/09/2024;25/10/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+108;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Zona de manejo y preservación ambiental. Bogotá D.C. Decreto 190 de 2004 (No vigente desde el 30 de diciembre de 2021); Anual;Actualizar;1;;Si;24/09/2024; 25/10/2024 ;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+109;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Cobertura Vegetal en Humedales;Anual;Actualizar;;;;24/09/2024;25/10/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+110;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Medidas de Adaptación al cambio climático; Anual;Actualizar;1;;Si;24/09/2024;25/10/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+111;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Bogotá Capacidad Adaptativa;Anual;Actualizar;1;;Si;24/09/2024; 08/11/2024 ;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+112;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Conector Ecosistémico ; Según necesidad;Actualizar;1;;Si;24/09/2024;8/11/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+113;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Retamo Espinoso Urbano Rural;Anual;Actualizar;1;;Si;24/09/2024; 08/11/2024 ;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+114;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Programa de Excelencia Ambiental ; Anual;Actualizar;1;;Si;24/09/2024;8/11/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+115;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Aulas Ambientales ;Según necesidad;Actualizar;1;;Si;24/09/2024;8/11/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+116;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Senderos de Interpretación Ambiental ;Según necesidad;Actualizar;1;;Si;24/09/2024;15/11/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;-;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+117;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Concentración de Ozono Promedio Anual;Anual;Actualizar;1;;Si;24/09/2024;15/11/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;-;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+118;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Precipitación Anual Acumulada ;Anual;Actualizar;1;;Si;24/09/2024;15/11/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;-;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+119;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Temperatura Media Superficial;Anual ;Actualizar;1;;Si;24/09/2024;15/11/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;-;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+120;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Velocidad del Viento 0-23 h Anual; Anual;Actualizar;1;;Si;24/09/2024;15/11/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;-;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+121;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;PM2.5 Promedio Anual;Anual;Actualizar;1;;Si;24/09/2024;22/11/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+122;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Sistema Distrital de Áreas Protegidas ; Según necesidad;Actualizar;1;;Si;24/09/2024;22/11/2024;Si;Si;Si;Si;Si;-;Completo;Completo;Completo;Completo;-;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+123;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Sistema Hídrico. Bogotá D.C ; Según necesidad;Actualizar;1;;Si;24/09/2024;22/11/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+124;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Techos verdes y Jardines Verticales; Según necesidad;Actualizar;1;;Si;24/09/2024; 22/11/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;-;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+125;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Situación Ambiental Conflictiva ;Según necesidad;Actualizar;1;;Si;24/09/2024;29/11/2024;Si;Si;Si;Si;Si;Completo;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+126;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Generador de residuos de construcción y demolición;Según necesidad;Actualizar;1;;Si;24/09/2024; 29/11/2024 ;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+127;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Generadores de RESPEL hospitalario;Según necesidad;Actualizar;1;;Si;24/09/2024; 29/11/2024 ;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+128;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Generador de RESPEL industrial; Según necesidad;Actualizar;1;;Si;24/09/2024; 29/11/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";No;No;N/A;No;No;No;;;"Tiene registro de Items, sin embargo esta en valoración los conceptos alli dispuestos; aprobada documentación, falta ET.";30/06/2025
+129;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Gestores de residuos de construcción y demolición - RCD;Según necesidad;Actualizar;1;;Si;24/09/2024; 29/11/2024 ;Si;Si;Si;Si;Si;-;Completo;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;No;N/A;No;No;No;;;Aprobado documentacion pendiente ET-;30/06/2025
+130;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;Parques de Borde ;Según necesidad;Nuevo;;1;Si;24/09/2024;1/11/2024;Si;Si;Si;Si;Si;-;-;Completo;Completo;Completo;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;Si;Si;SI;No;No;;;Pendiente UrL publicacion documentacion;30/06/2025
+130;Diego Harvey Marín Rodríguez;Secretaría Distrital de Ambiente SDA;RPP Thomas Van Der Hammen;Según necesidad;Actualizar;1;;Si;-;-;Si;Si;Si;Si;Si;-;-;-;-;-;Completo;"Si: CO,DD,EC; No: ET, Ritems";Si;Si;Si;SI;No;No;;;Pendiente UrL publicacion documentacion;30/06/2025
+131;Jairo Perdomo Reyes;Secretaría Distrital de Movilidad SDM;Red Semafórica ; Según necesidad;Actualizar;1;;Si;30/10/2024;28/02/2025;Si;Si;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;;
+132;Jairo Perdomo Reyes;Secretaría Distrital de Movilidad SDM;Cicloparqueaderos Certificados Bogotá D C 28/02/2025; Según necesidad;Actualizar;1;;Si;30/10/2024;28/02/2025;Si;Si;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;;
+133;Diana Constanza Carvajal Peña;Empresa de Transporte de Tercer Milenio (Transmilenio S.A);Rutas Troncales de Transmilenio;Según necesidad;Actualizar;1;;Si;19/12/2024;28/02/2025;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Se firmo acta hasta el 19/12/2024;
+134;Diana Constanza Carvajal Peña;Empresa de Transporte de Tercer Milenio (Transmilenio S.A);Trazados Troncales de Transmilenio;Según necesidad;Actualizar;1;;Si;19/12/2024;28/02/2025;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Se firmo acta hasta el 19/12/2024;
+135;Diana Constanza Carvajal Peña;Empresa de Transporte de Tercer Milenio (Transmilenio S.A);Estaciones Troncales de Transmilenio;Según necesidad;Actualizar;1;;Si;19/12/2024;28/02/2025;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Se firmo acta hasta el 19/12/2024;
+136;Diana Constanza Carvajal Peña;Empresa de Transporte de Tercer Milenio (Transmilenio S.A);Rutas Zonales del SITP;Según necesidad;Actualizar;1;;Si;19/12/2024;28/02/2025;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Se firmo acta hasta el 19/12/2024;
+137;Diana Constanza Carvajal Peña;Empresa de Transporte de Tercer Milenio (Transmilenio S.A);Paraderos Zonales del SITP;Según necesidad;Actualizar;1;;Si;19/12/2024;28/02/2025;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Se firmo acta hasta el 19/12/2024;
+138;Diana Constanza Carvajal Peña;Empresa de Transporte de Tercer Milenio (Transmilenio S.A);Líneas de Cable;Según necesidad;Nuevo;;1;Si;19/12/2024;28/02/2025;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Se firmo acta hasta el 19/12/2024;
+139;Diana Constanza Carvajal Peña;Empresa de Transporte de Tercer Milenio (Transmilenio S.A);Estaciones de Cable;Según necesidad;Nuevo;;1;Si;19/12/2024;28/02/2025;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Se firmo acta hasta el 19/12/2024;
+140;Diana Constanza Carvajal Peña;Empresa de Transporte de Tercer Milenio (Transmilenio S.A);Patios SITP;Según necesidad;Nuevo;;1;Si;19/12/2024;28/02/2025;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Se firmo acta hasta el 19/12/2024;
+141;Diana Constanza Carvajal Peña;Empresa de Transporte de Tercer Milenio (Transmilenio S.A);Pilonas Cable;Según necesidad;Nuevo;;1;Si;19/12/2024;28/02/2025;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Se firmo acta hasta el 19/12/2024;
+142;Diana Constanza Carvajal Peña;Empresa de Transporte de Tercer Milenio (Transmilenio S.A);Nuevas Zonas SITP;Según necesidad;Nuevo;;1;Si;19/12/2024;28/02/2025;Si;No;No;No;No;-;-;-;-;-;-;No;No;No;No;No;No;No;;;Se firmo acta hasta el 19/12/2024;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Casa de Igualdad de Oportunidades para las Mujeres;Semestral;Actualizar;1;;Si;20/02/2025;8/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Área de acceso peatonal de las manzanas del cuidado;Bimensual;Actualizar;1;;Si;20/02/2025;8/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Área de cobertura de servicios de las manzanas del cuidado;Bimensual;Actualizar;1;;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Equipamientos Ancla de las Manzanas del Cuidado;Bimensual;Actualizar;1;;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Localidades con manzanas del cuidado activas;Bimensual;Actualizar;1;;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Servicios prestados en las manzanas del cuidado;Trimestral;Actualizar;1;;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Asesinatos de Mujeres por localidad;Trimestral;Actualizar;1;;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Delitos Sexuales por localidad;Trimestral;Actualizar;1;;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Violencia intrafamiliar por localidad;Trimestral;Actualizar;1;;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Lesiones personales por localidad;Trimestral;Actualizar;1;;Si;20/02/2025;14/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Riesgo de Feminicidio por localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones de Línea Purpura Distrital por localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Psicosociales Casa Todas por Localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Intervenciones Sociales Casa Todas por Localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Socio jurídicas Casa Todas por Localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones por intervenciones sociales CIOM por localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones por intervenciones sociales CIOM por punto de atención;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Psicosociales CIOM por Localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Psicosociales CIOM por Punto Atención;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Socio jurídicas CIOM por Localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Orientaciones Socio jurídicas CIOM por Punto Atención;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones DUPLAS por localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones de Duplas en transporte público por localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones psicosociales en otros espacios institucionales por Localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones socio jurídicas en otros espacios institucionales por Localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones socio jurídicas en hospitales por localidad;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones psicosociales en Sistema distrital de cuidado;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones socio jurídicas en Sistema distrital de cuidado;Trimestral;Actualizar;1;;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretarpia Distrital de la Mujer;Atenciones del sistema distrital de cuidado InfoCuidado ;Anual;Nuevo;;1;Si;20/02/2025;2/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;30/06/2025
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Sistemas de alertas por localidad;Semestral;Actualizar;1;;Si;19/02/2025;7/03/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Territorialización de la inversión por localidad;Anual;Actualizar;1;;Si;19/02/2025;7/03/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;31/05/2025
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Beneficiarios de alimentación por localidad;Semestral;Actualizar;1;;Si;19/02/2025;22/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Beneficiarios de movilidad por localidad;Semestral;Actualizar;1;;Si;19/02/2025;22/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Dirección Locales de Educación;Anual;Actualizar;1;;Si;19/02/2025;9/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Colegios;Trimestral;Actualizar;1;;Si;19/02/2025;14/03/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;31/05/2025
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Colegios Oficiales nuevos y en restitución;Semestral;Actualizar;1;;Si;19/02/2025;23/05/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Pruebas Saber 11;Anual;Actualizar;1;;Si;19/02/2025;17/06/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Densidad de matriculados en Colegios Oficiales;Anual;Actualizar;1;;Si;19/02/2025;12/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de deserción escolar no oficial por localidad;Anual;Actualizar;1;;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de deserción escolar no oficial por UPZ;Anual;Actualizar;1;;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de deserción escolar oficial por localidad;Anual;Actualizar;1;;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de deserción escolar oficial por UPZ;Anual;Actualizar;1;;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de aprobación escolar no oficial por localidad;Anual;Actualizar;1;;Si;19/02/2025;9/07/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de aprobación escolar no oficial por UPZ;Anual;Actualizar;1;;Si;19/02/2025;9/07/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de aprobación escolar oficial por localidad;Anual;Actualizar;1;;Si;19/02/2025;9/07/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de aprobación escolar oficial por UPZ;Anual;Actualizar;1;;Si;19/02/2025;9/07/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de reprobación escolar no oficial por localidad;Anual;Actualizar;1;;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de reprobación escolar no oficial por UPZ;Anual;Actualizar;1;;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de reprobación escolar oficial por localidad;Anual;Actualizar;1;;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de reprobación escolar oficial por UPZ;Anual;Actualizar;1;;Si;19/02/2025;22/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Matrícula Oficial primera infancia;Anual;Actualizar;1;;Si;19/02/2025;8/10/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Matrícula Oficial jornada única;Anual;Actualizar;1;;Si;19/02/2025;8/10/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Matrícula total en colegios oficiales;Anual;Actualizar;1;;Si;19/02/2025;8/10/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Demanda de cupos sector oficial;Anual;Actualizar;1;;Si;19/02/2025;18/08/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Oferta de cupos sector oficial;Anual;Actualizar;1;;Si;19/02/2025;8/09/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Nivel de formación de docentes por localidad en colegios de clase distrital;Anual;Actualizar;1;;Si;19/02/2025;14/11/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Uso de recursos naturales en colegios oficiales;Semestral;Actualizar;1;;Si;19/02/2025;21/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Consumo per cápita de recursos naturales en colegios oficiales;Semestral;Actualizar;1;;Si;19/02/2025;21/04/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Secretaría de Educación del Distrito SED;Tasa de cobertura bruta por localidad y nivel educativo;Anual;Actualizar;1;;Si;19/02/2025;10/11/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;
+;Diana Constanza Carvajal Peña;Instituto Distrital para la Protección de la Niñez y la Juventud IDIPRON;Unidad de Protección Integral UPI;Anual;Actualizar;1;;Si;19/02/2025;19/03/2025;Si;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;31/05/2025
